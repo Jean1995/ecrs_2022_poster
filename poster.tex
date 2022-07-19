@@ -351,7 +351,7 @@
                 \item First comparisons of CORSIKA~8 and CORSIKA~7 already show a good agreement for simulations of the electromagnetic shower component \cite{Alameddine:2021iq}
               \end{itemize}
 
-        \vspace{2em}
+        \vspace{1em}
 
               \begin{figure}
                 \centering
@@ -378,7 +378,7 @@
             \item[$\rightarrow$] We are currently analyzing the possibilities to use muography in mining with PROPOSAL simulations
           \end{itemize} 
         \end{itemize}
-      \vspace{3em}
+      \vspace{2em}
         \begin{figure}
             \begin{tikzpicture}[scale=2.5, every node/.style={scale=0.85}]
                 \centering
@@ -386,31 +386,31 @@
                 \coordinate (A) at (0, 0);
 
                 % ground
-                \draw[draw=none, fill=gray, fill opacity=1.0] ($ (A) + (-3.5,-2.5) $) rectangle ++(7, 5);
+                \draw[draw=none, fill=gray, fill opacity=1.0] ($ (A) + (-3.5,-2.5) $) rectangle ++(7, 4);
 
                 % sky
-                \draw[draw=none, fill={rgb:red,0.33;green,0.5;blue,0.98}, fill opacity=0.5] ($ (A) + (-3.5,2.5) $) rectangle ++(7, 1);
-                \node[draw=none] at ($ (A) + (0.0, 3) $) {Sky};
+                \draw[draw=none, fill={rgb:red,0.33;green,0.5;blue,0.98}, fill opacity=0.5] ($ (A) + (-3.5,1.5) $) rectangle ++(7, 1);
+                \node[draw=none] at ($ (A) + (0.0, 2) $) {Sky};
 
                 % mining shaft
-                \draw[draw=none, fill={rgb:black,1;white,2}, fill opacity=1.0] ($ (A) + (2, -1.5) $) rectangle ++(0.25, 4.0);
-                \draw[draw=none, fill={rgb:black,1;white,2}, fill opacity=1.0] ($ (A) + (-2.0, -1.5) $) rectangle ++(4, 0.5);
+                \draw[draw=none, fill={rgb:black,1;white,2}, fill opacity=1.0] ($ (A) + (2, -2.0) $) rectangle ++(0.25, 3.5);
+                \draw[draw=none, fill={rgb:black,1;white,2}, fill opacity=1.0] ($ (A) + (-2.0, -2.0) $) rectangle ++(4, 0.5);
 
-                \node[draw=none] at ($ (A) + (0.8, -1.25) $) {Mining shaft};
+                \node[draw=none] at ($ (A) + (0.8, -1.75) $) {Mining shaft};
 
                 % detector
-                \node [cylinder, shape border rotate=90, draw,minimum height=0.40cm,minimum width=0.25cm, aspect=0.4] (detector) at ($ (A) + (-0.5, -1.3) $) {};
+                \node [cylinder, shape border rotate=90, draw,minimum height=0.40cm,minimum width=0.25cm, aspect=0.4] (detector) at ($ (A) + (-0.5, -1.8) $) {};
 
                 % impurity
-                \draw[draw=none,fill=black, fill opacity=0.7] ($ (A) + (0, 0.07) $) ellipse (0.3cm and 0.1cm);
-                \node[draw=none, text width=1cm] at ($ (A) + (0.9, 0.07) $) {Anomaly};
+                \draw[draw=none,fill=black, fill opacity=0.7] ($ (A) + (0.2, -0.4) $) ellipse (0.3cm and 0.1cm);
+                \node[draw=none, text width=1cm] at ($ (A) + (0.8, -0.4) $) {Anomaly};
 
                 % muons
-                \draw [densely dotted, blue, line width=0.25mm] ($ (A) + (-2.5, 3.0) $) -- ($ (detector) + (0.2, -0.5) $) node [near start, above, xshift=1ex] (TextNode) {$\mu$};
+                \draw [densely dotted, blue, line width=0.25mm] ($ (A) + (-2.5, 2.0) $) -- ($ (detector) + (0.2, -0.5) $) node [near start, above, xshift=1ex] (TextNode) {$\mu$};
 
-                \draw [densely dotted, blue, line width=0.25mm] ($ (A) + (-1.0, 3.0) $) -- ($ (detector) + (0.1, -0.5) $) node [near start, above, xshift=1ex] (TextNode) {$\mu$};
+                \draw [densely dotted, blue, line width=0.25mm] ($ (A) + (-1.0, 2.0) $) -- ($ (detector) + (0.1, -0.5) $) node [near start, above, xshift=1ex] (TextNode) {$\mu$};
 
-                \draw [densely dotted, blue, line width=0.25mm] ($ (A) + (1.0, 3.0) $) -- ($ (A) + (0, 0.07) $) node [pos=0.4, above, xshift=-1ex] (TextNode) {$\mu$};
+                \draw [densely dotted, blue, line width=0.25mm] ($ (A) + (1.0, 2.0) $) -- ($ (A) + (0.2, -0.4) $) node [pos=0.4, above, xshift=-1ex] (TextNode) {$\mu$};
 
             \end{tikzpicture}
             \caption*{Visualization of the muography technique to explore density anomalies.}
