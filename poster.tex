@@ -84,7 +84,11 @@
 \date{4. Juli 2015}
 
 \titlegraphic{%
-  \includegraphics[width=1.0\linewidth]{tudo.pdf}
+  \includegraphics[width=1.0\linewidth, left]{tudo.pdf}\\
+  \vspace{0.2em}
+  \includegraphics[width=0.8\linewidth, left]{BUW.png}\\
+  %\vspace{0.2em}
+  %\includegraphics[width=1.0\linewidth, left]{dfg_logo_englisch_blau_en.jpg}
 }
 
 \begin{document}
@@ -106,7 +110,7 @@
     \begin{columns}
         \begin{column}{0.3\textwidth}
         \centering
-        \colorbox{lightgray}{
+        \colorbox{light-gray}{
       \begin{minipage}{6.0cm}
           \centering
         $\underset{\text{relative energy loss}}{v}$
@@ -269,7 +273,7 @@
     \end{column}%
   \end{columns}%
   \begin{columns}[onlytextwidth]%
-    \begin{column}{0.5\textwidth}%
+    \begin{column}{0.6\textwidth}%
       \begin{block}[equal height group=B]{Application: CORSIKA~8}%
           \begin{columns}[onlytextwidth]  
             \begin{column}{0.6\textwidth}%
@@ -292,18 +296,26 @@
 
 \vspace{2em}
 \begin{center}
+        \colorbox{light-gray}{
+      \begin{minipage}{0.85\linewidth}
+
+
 \begin{figure}[ht]
-\begin{minipage}[ht]{0.49\linewidth}
+\begin{minipage}[ht]{0.58\linewidth}
 Find the CORSIKA~8 repository under:\\ \url{gitlab.iap.kit.edu/AirShowerPhysics/corsika}
 \end{minipage}
 %\begin{minipage}[ht]{0.05\linewidth}
 %\end{minipage}
-\begin{minipage}[ht]{0.49\linewidth}
+\begin{minipage}[ht]{0.41\linewidth}
 \centering
 \includegraphics[%scale=1
-                 width=0.8\linewidth, valign=t]{plots/qr_corsika.png}
+                 width=0.8\linewidth, valign=t]{plots/qr_corsika_transparent.png}
 \end{minipage}
 \end{figure}
+
+    \end{minipage}
+      }    
+
 \end{center}
 
             \end{column}
@@ -319,7 +331,7 @@ Find the CORSIKA~8 repository under:\\ \url{gitlab.iap.kit.edu/AirShowerPhysics/
           \end{columns}
       \end{block}%
     \end{column}%
-    \begin{column}{0.5\textwidth}%
+    \begin{column}{0.4\textwidth}%
       \begin{block}[equal height group=B]{Application: Muography}%
         \begin{itemize}
           \setlength\itemsep{\itemseparation}
@@ -376,7 +388,7 @@ Find the CORSIKA~8 repository under:\\ \url{gitlab.iap.kit.edu/AirShowerPhysics/
 
   \vspace*{\fill}
   \begin{columns}[onlytextwidth]%
-    \begin{column}{0.6\textwidth}%
+    \begin{column}{0.38\linewidth}%
       \begin{block}[equal height group=bottom, fonttitle=\normalsize]{References}
         \begin{multicols}{3}
           \footnotesize%
@@ -384,7 +396,13 @@ Find the CORSIKA~8 repository under:\\ \url{gitlab.iap.kit.edu/AirShowerPhysics/
         \end{multicols}
       \end{block}
     \end{column}
-    \begin{column}{0.4\textwidth}%
+    \begin{column}{0.24\linewidth}%
+      \begin{block}[equal height group=bottom, fonttitle=\normalsize]{Acknowledgements}
+          We acknowledge funding by the Deutsche Forschungsgemeinschaft under the grant numbers XXXXX and SA 3876/2-1.\\
+          Furthermore, this work has been supported by the DFG, Collaborative Research Center SFB 876 (project C3) and Collaborative Research Center SFB 1491.
+      \end{block}
+    \end{column}
+    \begin{column}{0.38\linewidth}%
       \begin{block}[equal height group=bottom, fonttitle=\normalsize]{Contact}
         \begin{center}
   \begin{figure}[ht]
@@ -394,10 +412,10 @@ Find the CORSIKA~8 repository under:\\ \url{gitlab.iap.kit.edu/AirShowerPhysics/
   \textbf{Contact via mail:}\\ \href{mailto:me@jean-marco.alameddine@tu-dortmund.de}{jean-marco.alameddine@tu-dortmund.de} 
 
   \end{minipage}
-    \begin{minipage}[ht]{0.2\linewidth}
+    \begin{minipage}[ht]{0.24\linewidth}
     \centering
     \includegraphics[%scale=1
-                 width=0.9\linewidth, valign=t]{plots/qr_proposal.png}
+                 width=0.95\linewidth, valign=t]{plots/qr_proposal.png}
     \end{minipage}
   \end{figure}
   \end{center}
