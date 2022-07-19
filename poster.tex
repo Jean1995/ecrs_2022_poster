@@ -105,7 +105,7 @@
         \begin{multicols}{2}
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
-            \item PROPOSAL is a C\texttt{++}/Python \textbf{simulation framework}, providing 3D Monte Carlo simulations of high-energy electrons, positrons, muons, taus and photons \cite{koehne2013proposal, dunsch_2018_proposal_improvements}
+            \item PROPOSAL is a C\texttt{++}/Python simulation framework, providing 3D Monte Carlo simulations of high-energy electrons, positrons, muons, taus and photons \cite{koehne2013proposal, dunsch_2018_proposal_improvements}
             \item Different parametrizations of physical processes, including up-to-date parametrizations, are available
             \item Customizable propagation environment
             \item High-performance and high-precision simulations, optimized for long-scale particle propagation
@@ -227,7 +227,7 @@
       \end{block}%
   \begin{columns}[onlytextwidth]%
     \begin{column}{0.6\textwidth}%
-      \begin{block}{How to use PROPOSAL}%
+      \begin{block}[equal height group=F]{How to use PROPOSAL}%
         \begin{itemize}
           \setlength\itemsep{\itemseparation}
           \item PROPOSAL can be used as a C\texttt{++} or a Python library
@@ -275,17 +275,57 @@
       \end{block}%
     \end{column}%
     \begin{column}{0.4\textwidth}%
-      \begin{block}{Recent updates of PROPOSAL}%
+      \begin{block}[equal height group=F]{Recent updates of PROPOSAL}%
         PROPOSAL is updated regularly. Recent improvements include:
+        \vspace{0.2em}
         \begin{itemize}
           \setlength\itemsep{\itemseparation}
-          \item Simulation of stochastic deflections, i.e. deflection of particles in hard losses
-          \item Additions of new $\gamma$ effects
+          \item Simulation of stochastic deflections, i.e. deflections of particles in hard losses
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
-            \item[$\rightarrow$] $\gamma \rightarrow \text{Hadron}$ interactions
-            \item[$\rightarrow$] $\gamma \rightarrow \mu^+ \mu^-$
-            \item[$\rightarrow$] Analytical description of the photoeffect
+            \item[$\rightarrow$] Muon deflections due to multiple scattering and stochastic deflections might be a source of uncertainty in directional reconstructions \cite{gutjahr2022}
+          \end{itemize}
+        \end{itemize}
+        \begin{figure}
+            \begin{tikzpicture}[scale=2.5, every node/.style={scale=1.0}]
+                \centering
+
+                \coordinate (start) at (-1,0);
+                \coordinate (kink) at (1.8, 0);
+                \coordinate (end) at (4.5, 0.8);
+                \coordinate (continue) at (4.5, 0);
+
+
+
+                \draw [black, line width=0.6mm] (start) -- node[above] {$\mu$}  (kink);
+                \draw [->, black, line width=0.6mm] (kink) -- node[above] {$\mu^\prime$}  (end);
+                \draw [black, dashed, line width=0.2mm] (kink) -- (continue);
+
+                \fill [red] (kink) circle (0.15) node[label=below: $\substack{\text{stochastic} \\ \text{interaction}}$]{};
+
+                \pic [draw, "$\theta$", angle eccentricity=0.7, angle radius=3.3cm] {angle = continue--kink--end};
+
+            \end{tikzpicture}
+            %\caption*{Visualization of stochastic muon deflections.}
+        \end{figure} 
+        \begin{itemize}
+          \setlength\itemsep{\itemseparation}
+          \item Improvements in the simulation of high-energy photons by including
+          \begin{itemize}
+            \setlength\itemsep{\itemseparation}
+            \item[$\rightarrow$] Photoproduction ($\gamma \rightarrow \text{Hadron}$)
+            \item[$\rightarrow$] Muon pair production ($\gamma \rightarrow \mu^+ \mu^-$)
+            \item[$\rightarrow$] Photoeffect (using an analytical, approximate description)
+          \end{itemize}
+          \item Improved output of the Propagator class
+          \begin{itemize}
+            \setlength\itemsep{\itemseparation}
+            \item[$\rightarrow$] Possibility to repropagate a simulated particle to an arbitrary energy/distance
+          \end{itemize}
+          \item Code restructuring and modularization
+          \begin{itemize}
+            \setlength\itemsep{\itemseparation}
+            \item[$\rightarrow$] PROPOSAL can either be used as a complete 3D Monte Carlo Simulation, or as a framework, where individual modules to solve physical tasks are provided
           \end{itemize}
         \end{itemize}
       \end{block}%

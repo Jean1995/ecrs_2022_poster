@@ -15,7 +15,7 @@ init_state.energy = 1e9 # MeV
 
 # propagation
 prop_distances = []
-for i in range(1000):
+for i in range(10000):
     output = prop.propagate(init_state, 
                             max_distance = 1e5) # cm
     E_f = output.final_state().energy
