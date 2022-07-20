@@ -59,7 +59,7 @@
 
 
 %% this is used to create an inline bibliography
-\usepackage[backend=biber, style=numeric]{biblatex}
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
 \addbibresource{biblatex-phys.bib}
 
 \DeclareFieldFormat*{title}{\textit{#1}}
@@ -107,7 +107,7 @@
             \setlength\itemsep{\itemseparation}
             \item PROPOSAL is a C\texttt{++}/Python simulation framework, providing 3D Monte Carlo simulations of high-energy electrons, positrons, muons, taus and photons \cite{koehne2013proposal, dunsch_2018_proposal_improvements}
             \item Different parametrizations of physical processes, including up-to-date parametrizations
-            \item High-performance and high-precision simulations, optimized for long-scale particle propagation
+            \item High-performance and high-precision simulations, optimized for large-scale particle propagation
           \end{itemize}
           
           \vspace{0.5em}
@@ -236,7 +236,7 @@
               \item[$\rightarrow$] Simple Python installation with \colorbox{tuYellow}{\texttt{pip install proposal}}
               \item[$\rightarrow$] C\texttt{++} installation using the package manager Conan and CMake
             \end{itemize}
-          \item Information about the configuration environment can be read using a json file
+          \item Information about the configuration environment can be read using a JSON file
         \end{itemize}
         \vspace{-0.75em}
         \begin{columns}[onlytextwidth]
@@ -339,13 +339,13 @@
                 \begin{itemize}
                   \setlength\itemsep{\itemseparation}
                   \item[$\rightarrow$] Entirely new code structure, based on modern C\texttt{++} 
-                  \item[$\rightarrow$] Focus on flexibilty, modularity, efficiency and reliability \cite{Engel2018}
+                  \item[$\rightarrow$] Focus on flexibility, modularity, efficiency and reliability \cite{Engel2018}
                 \end{itemize}
                 \item PROPOSAL is used to simulate the electromagnetic and muonic shower component
                 \begin{itemize}
                   \setlength\itemsep{\itemseparation}
                   \item[$\rightarrow$] PROPOSAL provides individual modules, where each module solves specific physical tasks \cite{Alameddine_2020}
-                  \item[$\rightarrow$] CORSIKA~8 uses these modules to calculate interaction lengths, energy losses and multiple scattering 
+                  \item[$\rightarrow$] CORSIKA~8 uses these modules to calculate interaction lengths, energy losses, multiple scattering and secondary particles 
                 \end{itemize}
                 \item First comparisons of CORSIKA~8 and CORSIKA~7: Good agreement for simulations of electromagnetic showers \cite{Alameddine:2021iq}
               \end{itemize}
@@ -461,7 +461,7 @@
           \item Implementation of the LPM effect for inhomogeneous media
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
-            \item[$\rightarrow$] Important for very-high energy showers
+            \item[$\rightarrow$] Important for very-high-energy air showers
           \end{itemize}
           \item Implementation of only-stochastic propagations
           \begin{itemize}
