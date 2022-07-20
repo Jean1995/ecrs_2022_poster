@@ -106,12 +106,11 @@
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
             \item PROPOSAL is a C\texttt{++}/Python simulation framework, providing 3D Monte Carlo simulations of high-energy electrons, positrons, muons, taus and photons \cite{koehne2013proposal, dunsch_2018_proposal_improvements}
-            \item Different parametrizations of physical processes, including up-to-date parametrizations, are available
-            \item Customizable propagation environment
+            \item Different parametrizations of physical processes, including up-to-date parametrizations
             \item High-performance and high-precision simulations, optimized for long-scale particle propagation
           \end{itemize}
           
-          \vspace{-1.5em}
+          \vspace{0.5em}
     %\centering
     \textbf{Basic propagation algorithm of PROPOSAL:}
     \centering
@@ -146,7 +145,7 @@
         \colorbox{light-gray}{
       \begin{minipage}[c][4ex][c]{8.8cm}
           \centering
-        $v_\text{cut} = \text{min}\left[\sfrac{e_\text{cut}}{E}, v\prime_\text{cut}\right]$  
+        $v_\text{cut} = \text{min}\left[\sfrac{e_\text{cut}}{E}, v^{\prime}_\text{cut}\right]$  
     \end{minipage}
       }        
       \end{column}
@@ -154,7 +153,7 @@
     \end{minipage}
     \centering\\
         \textcolor{tugreen}{$\rightarrow$} Separate relative energy losses $v$ into hard and soft losses
-    \vspace{-2.5em}
+    \vspace{-0.0em}
 
 
   \centering
@@ -181,7 +180,7 @@
       \end{tikzpicture}
     \end{figure}
     \end{tcolorbox}
-    \vspace{-2.5em}
+    \vspace{-0.0em}
     \begin{minipage}{0.9\linewidth}
     \begin{columns}[onlytextwidth]
       \Large
@@ -200,7 +199,8 @@
     \end{columns}
       \vspace{0.5em}
       \centering
-        \textcolor{tugreen}{$\rightarrow$} Do continuous propagation steps, taking energy losses into account
+        \textcolor{tugreen}{$\rightarrow$} Continuous propagation steps take energy losses into account,\\which allows for larger steplengths
+        %\textcolor{tugreen}{$\rightarrow$} Do continuous propagation steps, taking energy losses into account
     \end{minipage}
 
 
@@ -221,12 +221,12 @@
               \includegraphics[width=\linewidth, height=.4\textheight, keepaspectratio]{plots/photon_dEdx.png}
             \end{figure}
           \end{multicols}
-           \captionof*{figure}{Average energy losses of particles inside PROPOSAL.}
+           \captionof*{figure}{Average energy losses of particles inside PROPOSAL}
 
         \end{multicols}
       \end{block}%
   \begin{columns}[onlytextwidth]%
-    \begin{column}{0.6\textwidth}%
+    \begin{column}{0.55\textwidth}%
       \begin{block}[equal height group=F]{How to use PROPOSAL}%
         \begin{itemize}
           \setlength\itemsep{\itemseparation}
@@ -238,9 +238,9 @@
             \end{itemize}
           \item Information about the configuration environment can be read using a json file
         \end{itemize}
-
+        \vspace{-0.75em}
         \begin{columns}[onlytextwidth]
-        \begin{column}{0.45\textwidth}
+        \begin{column}{0.48\textwidth}
         \begin{mdframed}[backgroundcolor=light-gray, roundcorner=10pt,leftmargin=1, rightmargin=1, innerleftmargin=15, innertopmargin=15,innerbottommargin=15, outerlinewidth=1, linecolor=light-gray]
 
           \lstinputlisting[
@@ -253,9 +253,9 @@
           \end{mdframed} 
 
           \end{column}
-          \begin{column}{0.1\textwidth}
+          \begin{column}{0.07\textwidth}
           \begin{center}
-            \vspace{7em}
+            \vspace{7.5em}
             \begin{tikzpicture}
             \draw[
               -triangle 90,
@@ -274,16 +274,14 @@
 
       \end{block}%
     \end{column}%
-    \begin{column}{0.4\textwidth}%
+    \begin{column}{0.45\textwidth}%
       \begin{block}[equal height group=F]{Recent updates of PROPOSAL}%
-        PROPOSAL is updated regularly. Recent improvements include:
-        \vspace{0.2em}
         \begin{itemize}
           \setlength\itemsep{\itemseparation}
-          \item Simulation of stochastic deflections, i.e. deflections of particles in hard losses
+          \item Simulation of particle deflections in stochastic losses (stochastic deflections)
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
-            \item[$\rightarrow$] Muon deflections due to multiple scattering and stochastic deflections might be a source of uncertainty in directional reconstructions \cite{gutjahr2022}
+            \item[$\rightarrow$] Muon deflections (multiple scattering and stochastic deflections) might be a source of uncertainty for directional reconstructions \cite{gutjahr2022}
           \end{itemize}
         \end{itemize}
         \begin{figure}
@@ -310,22 +308,23 @@
         \end{figure} 
         \begin{itemize}
           \setlength\itemsep{\itemseparation}
-          \item Improvements in the simulation of high-energy photons by including
+          \item Improvements in the simulation of high-energy photons by including \dots
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
-            \item[$\rightarrow$] Photoproduction ($\gamma \rightarrow \text{Hadron}$)
-            \item[$\rightarrow$] Muon pair production ($\gamma \rightarrow \mu^+ \mu^-$)
-            \item[$\rightarrow$] Photoeffect (using an analytical, approximate description)
+            \item[$\rightarrow$] Photoproduction ($\gamma \rightarrow \text{Hadron}$): Important for high-energy photons
+            \item[$\rightarrow$] Photoeffect: Important for low-energy photons
+            \item[$\rightarrow$] Muon pair production ($\gamma \rightarrow \mu^+ \mu^-$): Important for the muon number in EM showers
           \end{itemize}
           \item Improved output of the Propagator class
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
-            \item[$\rightarrow$] Possibility to repropagate a simulated particle to an arbitrary energy/distance
+            \item[$\rightarrow$] Repropagate simulated particles to an arbitrary energy/distance
           \end{itemize}
           \item Code restructuring and modularization
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
-            \item[$\rightarrow$] PROPOSAL can either be used as a complete 3D Monte Carlo Simulation, or as a framework, where individual modules to solve physical tasks are provided
+            \item[$\rightarrow$] Usage of PROPOSAL as a complete 3D Monte Carlo simulation
+            \item[$\rightarrow$] Usage of PROPOSAL as a framework, where individual modules are provided
           \end{itemize}
         \end{itemize}
       \end{block}%
@@ -336,39 +335,55 @@
       \begin{block}[equal height group=B]{Application: CORSIKA~8}%
               \begin{itemize}
                 \setlength\itemsep{\itemseparation}
-                \item CORSIKA~8 is the newest version of the air shower simulation framework CORSIKA
+                \item New version of the air shower simulation framework CORSIKA
                 \begin{itemize}
                   \setlength\itemsep{\itemseparation}
                   \item[$\rightarrow$] Entirely new code structure, based on modern C\texttt{++} 
                   \item[$\rightarrow$] Focus on flexibilty, modularity, efficiency and reliability \cite{Engel2018}
                 \end{itemize}
-                \item For CORSIKA~8, PROPOSAL is used to simulate the electromagnetic and muonic shower component
+                \item PROPOSAL is used to simulate the electromagnetic and muonic shower component
                 \begin{itemize}
                   \setlength\itemsep{\itemseparation}
                   \item[$\rightarrow$] PROPOSAL provides individual modules, where each module solves specific physical tasks \cite{Alameddine_2020}
                   \item[$\rightarrow$] CORSIKA~8 uses these modules to calculate interaction lengths, energy losses and multiple scattering 
                 \end{itemize}
-                \item First comparisons of CORSIKA~8 and CORSIKA~7 already show a good agreement for simulations of the electromagnetic shower component \cite{Alameddine:2021iq}
+                \item First comparisons of CORSIKA~8 and CORSIKA~7: Good agreement for simulations of electromagnetic showers \cite{Alameddine:2021iq}
               \end{itemize}
 
-        \vspace{1em}
+        \vspace{0.5em}
 
               \begin{figure}
                 \centering
                 \includegraphics[width=0.8\linewidth, height=.4\textheight, keepaspectratio]{plots/shower_horizonal.png}
                 \caption*{\SI{1}{\tera\electronvolt} $e^-$ shower simulated with CORSIKA~8}
               \end{figure}
+
+              \begin{center}
+                \colorbox{light-gray}{
+                  \begin{minipage}{0.80\linewidth}
+                    \begin{itemize}
+                      \item[\textcolor{tugreen}{$\rightarrow$}] More about CORSIKA~8 in the talk by A.~Sandrock \\(Thursday, 5:30 PM, Parallel 1)
+                    \end{itemize}
+                    %$\rightarrow$ More about CORSIKA~8 in talk by A.~Sandrock \\(Thursday, 5:30 PM, Parallel 1)
+                  \end{minipage}
+                }
+              \end{center}
+
+              %\begin{itemize}
+              %  \item[$\rightarrow$] More on CORSIKA~8 in talk by A.~Sandrock (Thursday, 5:30 PM)
+              %\end{itemize}
+
       \end{block}%
     \end{column}%
     \begin{column}{\thirdtextwidth}%
       \begin{block}[equal height group=B]{Application: Neutrino telescopes}%
         \begin{itemize}
           \setlength\itemsep{\itemseparation}
-          \item PROPOSAL is used by neutrino telescopes, for example in the IceCube Neutrino observatory
+          \item PROPOSAL is used by neutrino telescopes, for example in the IceCube Neutrino observatory or in RNO-G
           \item Simulation of muon and tau energy losses in ice
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
-            \item[$\rightarrow$] Accurate description of interaction cross sections necessary
+            \item[$\rightarrow$] Precise simulations and an accurate description of cross sections are crucial
           \end{itemize}
           \item Other tools process energy losses to simulate Cherenkov photons
         \end{itemize}
@@ -388,15 +403,15 @@
       \begin{block}[equal height group=B]{Application: Muography}%
         \begin{itemize}
           \setlength\itemsep{\itemseparation}
-          \item Muography is a non-invasive imaging technique using Cosmic Ray muons
-          \item Tracing the muon number along trajectories provides information, for example on density anomalies
+          \item Non-invasive imaging technique using Cosmic Ray muons
+          \item Tracing muon number along trajectories: Provides information, for example on density anomalies
           \item PROPOSAL is a well-suited tool to provide the necessary muon simulations
           \begin{itemize}
             \setlength\itemsep{\itemseparation}
-            \item[$\rightarrow$] We are currently analyzing the possibilities to use muography in mining with PROPOSAL simulations
+            \item[$\rightarrow$] Currently analyzing the possibilities to use muography in mining with PROPOSAL simulations
           \end{itemize} 
         \end{itemize}
-      \vspace{2em}
+      \vspace{1.25em}
         \begin{figure}
             \begin{tikzpicture}[scale=2.5, every node/.style={scale=0.85}]
                 \centering
@@ -431,49 +446,66 @@
                 \draw [densely dotted, blue, line width=0.25mm] ($ (A) + (1.0, 2.0) $) -- ($ (A) + (0.2, -0.4) $) node [pos=0.4, above, xshift=-1ex] (TextNode) {$\mu$};
 
             \end{tikzpicture}
-            \caption*{Visualization of the muography technique to explore density anomalies.}
+            \caption*{Visualization of the muography technique \\to explore density anomalies}
         \end{figure} 
 
       \end{block}%
     \end{column}%
   \end{columns}%
 
+  \begin{columns}[onlytextwidth]%
+    \begin{column}{0.4\textwidth}%
+      \begin{block}[equal height group=Z]{Outlook}%
+        \begin{itemize}
+          \setlength\itemsep{\itemseparation}
+          \item Implementation of the LPM effect for inhomogeneous media
+          \begin{itemize}
+            \setlength\itemsep{\itemseparation}
+            \item[$\rightarrow$] Important for very-high energy showers
+          \end{itemize}
+          \item Implementation of only-stochastic propagations
+          \begin{itemize}
+            \setlength\itemsep{\itemseparation}
+            \item[$\rightarrow$] Allows for neutrino propagation with PROPOSAL
+          \end{itemize}
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.4\textwidth}%
+      \begin{block}[equal height group=Z]{Contact}%
+        \begin{center}
+          \begin{figure}[ht]
+            \begin{minipage}[ht]{0.75\linewidth}
+              \textbf{Find the PROPOSAL repository under:}\\ \url{github.com/tudo-astroparticlephysics/PROPOSAL} \vspace{0.5em}\\
+              \textbf{Contact via mail:}\\ \href{mailto:me@jean-marco.alameddine@tu-dortmund.de}{jean-marco.alameddine@tu-dortmund.de} 
+            \end{minipage}
+            \begin{minipage}[ht]{0.24\linewidth}
+              \centering
+                \includegraphics[width=0.66\linewidth, valign=t]{plots/qr_proposal.png}
+            \end{minipage}
+          \end{figure}
+        \end{center}
+      \end{block}
+    \end{column}
+    \end{columns}
 
   \vspace*{\fill}
   \begin{columns}[onlytextwidth]%
-    \begin{column}{0.38\linewidth}%
-      \begin{block}[equal height group=bottom, fonttitle=\normalsize]{References}
+    \begin{column}{0.75\textwidth}%
+      \begin{alertblock}[equal height group=bottom, fonttitle=\normalsize]{References}
         \begin{multicols}{3}
           \footnotesize%
           \printbibliography%
         \end{multicols}
-      \end{block}
+      \end{alertblock}
     \end{column}
-    \begin{column}{0.24\linewidth}%
-      \begin{block}[equal height group=bottom, fonttitle=\normalsize]{Acknowledgements}
+    \begin{column}{0.25\textwidth}%
+      \begin{alertblock}[equal height group=bottom, fonttitle=\normalsize]{Acknowledgements}
+          \footnotesize%
           This work has been supported by the DFG, Collaborative Research Center SFB 876 (project C3) and Collaborative Research Center SFB 1491 as well as by the BMBF, project 05A20PEA.\\
-          Furthermore, we acknowledge funding by the Deutsche Forschungsgemeinschaft under the grant number SA 3876/2-1.\\
-      \end{block}
+          Furthermore, we acknowledge funding by the DFG under the grant number SA 3876/2-1.
+      \end{alertblock}
     \end{column}
-    \begin{column}{0.38\linewidth}%
-      \begin{block}[equal height group=bottom, fonttitle=\normalsize]{Contact}
-        \begin{center}
-  \begin{figure}[ht]
-  \begin{minipage}[ht]{0.75\linewidth}
-  \textbf{Find the PROPOSAL repository under:}\\ \url{github.com/tudo-astroparticlephysics/PROPOSAL}\\
-  \vspace{0.2em}\\
-  \textbf{Contact via mail:}\\ \href{mailto:me@jean-marco.alameddine@tu-dortmund.de}{jean-marco.alameddine@tu-dortmund.de} 
-
-  \end{minipage}
-    \begin{minipage}[ht]{0.24\linewidth}
-    \centering
-    \includegraphics[%scale=1
-                 width=0.95\linewidth, valign=t]{plots/qr_proposal.png}
-    \end{minipage}
-  \end{figure}
-  \end{center}
-  \end{block}
-  \end{column}
   \end{columns}
 
   %\begin{block}[equal height group=bottom, fonttitle=\normalsize]{References}
